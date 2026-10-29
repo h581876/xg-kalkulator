@@ -6,7 +6,7 @@ import streamlit as st
 from src.features import FEATURES, add_features
 
 st.title("xG-kalkulator")
-st.write("Hvor sannsynlig er det at skuddet blir mål? Modellen er trent på åpne data fra StatsBomb.")
+st.write("Hvor sannsynlig er det at skuddet blir mål?")
 
 
 @st.cache_resource
@@ -44,3 +44,15 @@ with col2:
     ax.axis("off")
     st.pyplot(fig)
     plt.close(fig)
+
+    st.divider()
+
+    st.caption("Data source: StatsBomb Open Data")
+    st.image(
+        "assets/hudl-statsbomb-logo-default.png",
+        width=150
+    )
+
+    st.markdown(
+        "[StatsBomb Open Data](https://github.com/hudl/open-data)"
+    )
