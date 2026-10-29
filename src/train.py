@@ -26,7 +26,7 @@ df = clean_shots(pd.read_csv(ROOT / "data" / "raw" / "shots.csv"))
 print(f"Antall skudd: {len(df)}, kamper: {df['match_id'].nunique()}, "
       f"målandel: {df['goal'].mean():.4f}")
 
-# Tilfeldig splitt av skudd (80/20), stratifisert på utfall
+# Tilfeldig splitt av skudd (80/20)
 X, y = df[FEATURES], df["goal"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=RANDOM_STATE, stratify=y)
